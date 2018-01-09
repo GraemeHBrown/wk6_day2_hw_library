@@ -7,14 +7,16 @@ import static org.junit.Assert.assertTrue;
 
 public class LibraryTest {
 
-    Library library, library2;
-    Book book;
+    Library library, library2, library3;
+    Book book, book2;
 
     @Before
     public void before(){
         library = new Library(300);
         library2 = new Library(1);
+        library3 = new Library(30);
         book = new Book("Gone with the Wind", "Margaret Mitchell", "historical");
+        book2 = new Book("Mandela", "Anthony Sampson", "biography");
         library2.addBook(book);
     }
 
@@ -63,5 +65,15 @@ public class LibraryTest {
     public void libraryDoesNotHaveLentBookInStock(){
         library2.lendBook(book);
         assertFalse(library2.hasBookInStock(book));
+    }
+
+    @Test
+    public void genresHash(){
+        library3.addBook(book);
+        library3.addBook(book);
+        library3.addBook(book);
+        library3.addBook(book2);
+        library3.addBook(book2);
+        library3.createGenreCountHash();
     }
 }

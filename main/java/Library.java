@@ -1,4 +1,6 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Library {
 
@@ -41,5 +43,23 @@ public class Library {
 
     public void lendBook(Book bookToLend) {
         this.collection.remove(bookToLend);
+    }
+
+    public void createGenreCountHash() {
+        HashMap<String, Integer> genreMap = new HashMap<>();
+        ArrayList<String> genreList = new ArrayList<>();
+        for (Book book : this.collection) {
+            genreList.add(book.getGenre());
+        }
+
+        for (String genre : genreList) {
+            if (genreMap.containsKey(genre)) {
+                genreMap.put(genre, genreMap.get(genre) + 1);
+            } else {
+                genreMap.put(genre, 1);
+            }
+        }
+
+//        System.out.println(genreMap);
     }
 }

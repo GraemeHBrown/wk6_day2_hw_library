@@ -3,9 +3,11 @@ import java.util.ArrayList;
 public class Library {
 
     private ArrayList<Book> collection;
+    private int stockCapacity;
 
-    public Library(){
+    public Library(int capacity) {
         this.collection = new ArrayList<Book>();
+        this.stockCapacity = capacity;
     }
 
     public int stockCount() {
@@ -13,6 +15,20 @@ public class Library {
     }
 
     public void addBook(Book book) {
-        this.collection.add(book);
+        if (hasCapacity()) {
+            this.collection.add(book);
+        }
+    }
+
+    public int getStockCapacity() {
+        return this.stockCapacity;
+    }
+
+    private boolean hasCapacity() {
+        if (stockCount() < this.stockCapacity) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

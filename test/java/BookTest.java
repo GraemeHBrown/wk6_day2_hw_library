@@ -7,23 +7,23 @@ public class BookTest {
     Book book;
 
     @Before
-    public void before(){
+    public void before() {
         book = new Book("Gone with the Wind",
                 "Margaret Mitchell", "historical");
     }
 
     @Test
-    public void bookHasTitle(){
+    public void bookHasTitle() {
         assertEquals("Gone with the Wind", book.getTitle());
     }
 
     @Test
-    public void bookHasAuthor(){
+    public void bookHasAuthor() {
         assertEquals("Margaret Mitchell", book.getAuthor());
     }
 
     @Test
-    public void bookHasGenre(){
+    public void bookHasGenre() {
         assertEquals("historical", book.getGenre());
     }
 }

@@ -31,4 +31,15 @@ public class Library {
             return false;
         }
     }
+
+    public boolean hasBookInStock(Book book) {
+        if (this.collection.contains(book)) {
+            return true;
+        }
+        return false;
+    }
+
+    public void lendBook(Book bookToLend) {
+        this.collection.remove(bookToLend);
+    }
 }

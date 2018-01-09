@@ -12,7 +12,7 @@ public class LibraryTest {
     public void before(){
         library = new Library(300);
         library2 = new Library(1);
-        book = new Book();
+        book = new Book("Gone with the Wind", "Margaret Mitchell");
         library2.addBook(book);
 
     }

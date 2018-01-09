@@ -8,7 +8,8 @@ public class BookTest {
 
     @Before
     public void before(){
-        book = new Book("Gone with the Wind", "Margaret Mitchell");
+        book = new Book("Gone with the Wind",
+                "Margaret Mitchell", "historical");
     }
 
     @Test
@@ -19,5 +20,10 @@ public class BookTest {
     @Test
     public void bookHasAuthor(){
         assertEquals("Margaret Mitchell", book.getAuthor());
+    }
+
+    @Test
+    public void bookHasGenre(){
+        assertEquals("historical", book.getGenre());
     }
 }
